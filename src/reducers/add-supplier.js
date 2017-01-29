@@ -1,4 +1,4 @@
-function addNewCompany(state =[], action){
+function addNewCompany(state = [], action){
 
    switch (action.type) {
       case "ADD_SUPPLIER":

@@ -4,7 +4,7 @@ import addNewCompany from './add-supplier'
 import removeCompany from './remove-supplier'
 
 
-const rootReducer = combineReducers({ removeCompany, addNewCompany, routing: routerReducer});
+const rootReducer = combineReducers({ suppliers: removeCompany, routing: routerReducer});
 
 
 export default rootReducer;

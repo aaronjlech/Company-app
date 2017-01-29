@@ -1,40 +1,22 @@
-// import { bindActionCreators } from 'redux';
-// import { connect} from 'react-redux';
-// import * as actionCreators from '../actions/action-creators';
-// import Main from './main';
-//
-//
-// function mapStateToProps(state){
-//
-//    return{
-//       suppliers: state.suppliers
-//    }
-// }
-//
-//
-// function mapDispatchToProps(dispatch){
-//
-//
-//    return bindActionCreators(actionCreators, dispatch);
-// }
-//
-//
-// const App = connect(mapStateToProps, mapDispatchToProps)(Main);
-//
-//
-import React from "react";
+import { bindActionCreators } from 'redux';
+import { connect} from 'react-redux';
+import * as actionCreators from '../actions/action-creators';
+import Main from './main';
+import suppliers from '../dummy-data'
 
+function mapStateToProps(state){
 
-const App = React.createClass({
-
-
-   render(){
-
-      return(
-         <div className="hello">
-            <h1>WAHTUP</h1>
-         </div>
-      )
+   return{
+      suppliers: suppliers
    }
-})
+}
+
+function mapDispatchToProps(dispatch){
+
+   return bindActionCreators(actionCreators, dispatch);
+}
+
+
+const App = connect(mapStateToProps, mapDispatchToProps)(Main);
+
 export default App;

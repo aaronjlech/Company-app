@@ -10,5 +10,4 @@ function removeCompany(state = [], action){
    }
 }
 
-
 export default removeCompany;

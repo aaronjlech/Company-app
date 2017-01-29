@@ -11,17 +11,20 @@ const Nav = React.createClass({
    render(){
 
       return(
-         <div class="top-bar">
-  <div class="top-bar-left">
+         <div className="top-bar">
+  <div className="top-bar-left">
       <h1>Supplier Index</h1>
   </div>
-  <div class="top-bar-right">
-    <ul class="menu">
+  <div className="top-bar-right">
+    <ul className="menu">
       <li><input type="search" placeholder="Search"/></li>
-      <li><button type="button" class="button">Search</button></li>
+      <li><button type="button" className="button">Search</button></li>
     </ul>
   </div>
 </div>
       )
    }
 })
+
+
+export default Nav;

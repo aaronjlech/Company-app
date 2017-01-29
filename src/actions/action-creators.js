@@ -1,28 +1,23 @@
-export function addSupplier(info){
+export const addSupplier = function (info){
+
    return{
       type: 'ADD_SUPPLIER',
       info
    }
 }
 
-export default addSupplier;
-//
-// export function addComment(postId, author, comment){
-//    return{
-//       type: "ADD_COMMENT",
-//       postId,
-//       author,
-//       comment
-//
-//    }
-// }
-//
-//
-// export function removeComment(postId, i){
-//
-//    return{
-//       type: 'REMOVE_COMMENT',
-//       i,
-//       postId
-//    }
-// }
+export const removeSupplier = function(index){
+
+   return{
+      type: 'REMOVE_SUPPLIER',
+      index
+   }
+}
+
+export const filterSuppliers = function(category){
+
+   return{
+      type: "FILTER_SUPPLIERS",
+      category
+   }
+}

@@ -4,29 +4,27 @@ import React from 'react';
 
 
 
-const Suppliers = React.createClass({
-
-   _renderSingle(){
-      return(
-         <div className="suppliers_single">
-            <h1 className="supplier_name">{this.props.name}</h1>
-            <h3 className="supplier_address">{this.props.address}</h3>
-            <h3 className="supplier_phone">{this.props.phone}</h3>
-            <h3 className="supplier_email">{this.props.email}</h3>
-            <h3 className="supplier_category">{this.props.category}</h3>
-         </div>
-      )
-   },
-
+const Single = React.createClass({
 
    render(){
 
       return(
-         <div className="suppliers">
-            {}
+         <div className="suppliers_single columns medium-4 large-4 small-12">
+            <div className="card">
+               <div className="card-divider">
+                  <h4>{this.props.name}</h4>
+               </div>
+               <div className="card-section">
+                  <p>{this.props.address}</p>
+                  <p>{this.props.phone}</p>
+                  <p>{this.props.email}</p>
+                  <p>{this.props.category}</p>
+               </div>
+            </div>
          </div>
-      )
+      );
    }
-
-
 })
+
+
+export default Single;

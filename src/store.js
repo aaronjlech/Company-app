@@ -9,7 +9,7 @@ const defaultState = {
 }
 const store = createStore( rootReducer, defaultState);
 
-console.log(store, 'hello')
+console.log(store.getState(), 'hello')
 export const history = syncHistoryWithStore(browserHistory, store);
 
 export default store;

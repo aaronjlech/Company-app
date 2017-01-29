@@ -22,6 +22,11 @@ const suppliers = [
       category: "electronics"
    },
    {
+      name: "Circuits-R-Us",
+      address: "500 Business Rd.",
+      phone: "555-555-5555",
+      email: "supply@circuitsrus.com",
+      category: "electronics"
 
    }
 
