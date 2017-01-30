@@ -1,55 +1,64 @@
 import React from 'react';
-
+import addSupplier from '../actions/action-creators'
 
 
 
 const AddNewForm = React.createClass({
 
    _handleSubmit(e){
+      const {companyName, address, phone, category, email } = this.refs
       e.preventDefault()
-      console.log("haylloo")
+      let newSupplier = {
+         name: companyName.value,
+         address: address.value,
+         phone: phone.value,
+         category: category.value,
+         email: email.value
+
+      };
+      addSupplier(newSupplier)
+      this.refs.newForm.reset();
+      console.log(newSupplier)
    },
 
 
    render(){
       return(
-         <form onSubmit={this._handleSubmit}>
+         <form onSubmit={this._handleSubmit} ref="newForm" >
            <div className="row">
             <div className="medium-12 columns">
                <label>Company Name
-                  <input type="text" placeholder="name"/>
+                  <input ref="companyName" type="text" placeholder="name"/>
                </label>
                </div>
             <div className="medium-12 columns">
                <label>Address
-                 <input type="text" placeholder="address"/>
-               </label>
-            </div>
-            <div className="medium-12 columns">
-               <label>Address
-                 <input type="text" placeholder="address"/>
+                 <input ref="address" type="text" placeholder="address"/>
                </label>
             </div>
             <div className="medium-12 columns">
                <label>Phone
-                 <input type="text" placeholder="IE: 555-555-5555"/>
+                 <input ref="phone" type="text" placeholder="IE: 555-555-5555"/>
                </label>
             </div>
             <div className="medium-12 columns">
                <label>Email
-                 <input type="text" placeholder="Email"/>
+                 <input ref="email" type="text" placeholder="Email"/>
                </label>
             </div>
            </div>
+           <div className="medium-12 columns">
            <label>
-               <select>
+             Category
+               <select ref="category">
                   <option value="Appliances">Appliances</option>
                   <option value="Electronics">Electronics</option>
                   <option value="Tools">Tools</option>
                   <option value="Outdoor Equipment">Outdoor Equipment</option>
                </select>
             </label>
-            <input type="submit">Submit</input>
+            </div>
+            <button>Submit</button>
 
          </form>
       )

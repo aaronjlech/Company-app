@@ -23,6 +23,7 @@ const Main = React.createClass({
                      <Single
                         key={i}
                         name={sup.name}
+                        address={sup.address}
                         category={sup.category}
                         email={sup.email}
                         phone={sup.phone}
@@ -31,7 +32,7 @@ const Main = React.createClass({
                   )
                })}
             </div>
-            {/* <AddNewForm/> */}
+            <AddNewForm display="display"/>
 
          </div>
       )

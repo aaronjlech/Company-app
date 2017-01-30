@@ -7,9 +7,11 @@ import {browserHistory} from 'react-router';
 const defaultState = {
    suppliers
 }
-const store = createStore( rootReducer, defaultState);
+console.log(rootReducer)
+const store = createStore( rootReducer, defaultState,    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+console.log(store)
 
-console.log(store.getState(), 'hello')
 export const history = syncHistoryWithStore(browserHistory, store);
 
 export default store;

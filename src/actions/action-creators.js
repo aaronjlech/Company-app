@@ -1,4 +1,4 @@
-export const addSupplier = function (info){
+const addSupplier = function (info){
 
    return{
       type: 'ADD_SUPPLIER',
@@ -21,3 +21,4 @@ export const filterSuppliers = function(category){
       category
    }
 }
+export default addSupplier;

@@ -1,10 +1,9 @@
 import { combineReducers} from 'redux';
 import { routerReducer } from 'react-router-redux';
-import addNewCompany from './add-supplier'
-import removeCompany from './remove-supplier'
+import suppliers from './suppliers'
 
 
-const rootReducer = combineReducers({ suppliers: removeCompany, routing: routerReducer});
+const rootReducer = combineReducers({ suppliers });
 
 
 export default rootReducer;
