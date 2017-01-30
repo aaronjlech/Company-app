@@ -11,10 +11,9 @@ export const deleteSupplier = function(info){
       info
    }
 }
-export const editSupplier = function(crnt, updated){
+export const editSupplier = function(info){
    return{
       type: "EDIT_SUPPLIER",
-      crnt,
-      updated
+      info
    }
 }

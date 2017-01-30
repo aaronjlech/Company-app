@@ -1,8 +1,6 @@
 import React from 'react';
-import Single from './single-supplier';
-import Nav from './nav';
 import AddNewForm from './supplier-form';
-
+import MainSuppliers from './supplier-container'
 
 
 
@@ -12,12 +10,9 @@ const Main = React.createClass({
 
    render(){
 
-      const { suppliers } = this.props
       return(
          <div className="main-container">
-            <Nav {...this.props}/>
-            <h1>Joe Schmos</h1>
-
+            <MainSuppliers {...this.props} />
             <AddNewForm display="display"/>
 
          </div>

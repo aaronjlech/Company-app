@@ -4,7 +4,7 @@ const suppliers = [
       address: "1000 Blue dr.",
       phone: "888-555-5555",
       email: "newguys@gmail.com",
-      category: "appliances",
+      category: "Appliances",
       id: 1
 
    },
@@ -32,7 +32,15 @@ const suppliers = [
       category: "Electronics",
       id: 4
 
-   }
+   },
+   {
+      name: "Billy's Tools WholeSale",
+      address: "200 green dr.",
+      phone: "888-767-5555",
+      email: "billtools@gmail.com",
+      category: "Outdoor Equipment",
+      id: 5
+   },
 
 ];
 

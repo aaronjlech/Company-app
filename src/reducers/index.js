@@ -3,7 +3,7 @@ import { routerReducer } from 'react-router-redux';
 import suppliers from './suppliers'
 
 
-const rootReducer = combineReducers({ suppliers });
+const rootReducer = combineReducers({ suppliers, routing: routerReducer });
 
 
 export default rootReducer;
