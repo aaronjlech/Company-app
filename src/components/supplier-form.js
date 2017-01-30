@@ -16,9 +16,8 @@ const AddNewForm = React.createClass({
          email: email.value
 
       };
-      addSupplier(newSupplier)
-      this.refs.newForm.reset();
       console.log(newSupplier)
+      this.refs.newForm.reset();
    },
 
 

@@ -5,20 +5,16 @@ const addSupplier = function (info){
       info
    }
 }
-
-export const removeSupplier = function(index){
-
+export const deleteSupplier = function(info){
    return{
-      type: 'REMOVE_SUPPLIER',
-      index
+      type: 'DELETE_SUPPLIER',
+      info
    }
 }
-
-export const filterSuppliers = function(category){
-
+export const editSupplier = function(crnt, updated){
    return{
-      type: "FILTER_SUPPLIERS",
-      category
+      type: "EDIT_SUPPLIER",
+      crnt,
+      updated
    }
 }
-export default addSupplier;

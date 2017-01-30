@@ -1,14 +1,39 @@
 function suppliers(state = [], action){
 
+   const {name, address, phone, email, category} = action.info
+
    switch (action.type) {
       case "ADD_SUPPLIER":
-         console.log(state, action.type, action.supplier);
+      return[
+         {
+            name: name,
+            address: address,
+            phone: phone,
+            email: email,
+            id: state.length
+         }
+         ...state
+      ]
          break;
       case "REMOVE_SUPPLIER":
-         console.log(state, action.type, action.supplier);
+         return state.filter((supplier)=>{
+            supplier.id !== action.id
+         })
          break;
       case "EDIT_SUPPLIER":
-         console.log(state, action.type, action.supplier);
+         console.log(state, action.type, action.info);
+         return state.map((supplier)=>{
+            supplier.id === action.info.id ?
+               {
+                  ...supplier,
+                  name: name,
+                  address: address,
+                  phone: phone,
+                  email: email,
+                  id: action.info.id
+               } : supplier
+
+         })
          break;
       default:
          return state;
@@ -17,4 +42,4 @@ function suppliers(state = [], action){
 
 
 }
-export default addNewCompany;
+export default suppliers;
