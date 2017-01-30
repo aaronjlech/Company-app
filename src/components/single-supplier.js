@@ -1,15 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 
 
 
 
-const Single = React.createClass({
+const SupplierCard = React.createClass({
 
    render(){
 
       return(
          <div className="suppliers_single columns medium-4 large-4 small-12">
+            <Link to={`/view/${this.props.index}`}>
             <div className="card">
                <div className="card-divider">
                   <h4>{this.props.name}</h4>
@@ -21,10 +23,11 @@ const Single = React.createClass({
                   <p>{this.props.category}</p>
                </div>
             </div>
+         </Link>
          </div>
       );
    }
 })
 
 
-export default Single;
+export default SupplierCard;

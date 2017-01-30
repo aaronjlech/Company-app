@@ -17,11 +17,13 @@ const AddNewForm = React.createClass({
 
       };
       console.log(newSupplier)
+      this.props.addSupplier(newSupplier)
       this.refs.newForm.reset();
    },
 
 
    render(){
+      console.log(this.props, 'form proppps')
       return(
          <form onSubmit={this._handleSubmit} ref="newForm" >
            <div className="row">

@@ -1,4 +1,4 @@
-const addSupplier = function (info){
+export const addSupplier = function (info){
 
    return{
       type: 'ADD_SUPPLIER',

@@ -7,7 +7,7 @@ import suppliers from '../dummy-data'
 function mapStateToProps(state){
 
    return{
-      suppliers: suppliers
+      suppliers: state.suppliers
    }
 }
 

@@ -3,7 +3,7 @@ function suppliers(state = [], action){
 
    switch (action.type) {
       case "ADD_SUPPLIER":
-
+         console.log('fiah fiah fiah')
       return[
          {
             name: action.info.name,

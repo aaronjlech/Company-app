@@ -1,7 +1,6 @@
 import React from 'react';
-import Single from './single-supplier';
+import SupplierCard from './single-supplier';
 import Nav from './nav'
-
 
 
 const SUPPLIER_FILTERS = {
@@ -42,7 +41,7 @@ const MainSuppliers = React.createClass({
             <div className="row suppliers_container">
                {filteredSuppliers.map((sup, i)=>{
                   return (
-                     <Single
+                     <SupplierCard
                         key={i}
                         name={sup.name}
                         address={sup.address}

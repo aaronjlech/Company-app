@@ -13,7 +13,7 @@ const Main = React.createClass({
       return(
          <div className="main-container">
             <MainSuppliers {...this.props} />
-            <AddNewForm display="display"/>
+            <AddNewForm display="display" {...this.props}/>
 
          </div>
       )
