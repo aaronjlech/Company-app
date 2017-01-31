@@ -36,20 +36,13 @@ function suppliers(state = [], action){
          })
          break;
       case "EDIT_SUPPLIER":
+            return state.map((supplier)=>{
 
-         console.log(state, action.type, action.info);
-         return state.map((supplier)=>{
-            supplier.id === action.info.id ?
-
-               {
-                  // ...supplier,
-                  name: action.info.name,
-                  address: action.info.address,
-                  phone: action.info.phone,
-                  email: action.info.email,
-                  id: action.info.id
-               } : supplier
-
+            if(supplier.id === action.info.id){
+               return action.info
+            }else{
+               return supplier
+            }
          })
          break;
       default:

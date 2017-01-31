@@ -4,7 +4,7 @@ import Nav from './nav';
 import {Link} from 'react-router';
 
 const SUPPLIER_FILTERS = {
-   SHOW_ALL: supplier => !supplier.archived,
+   SHOW_ALL: supplier => true,
    SHOW_APPLIANCES: supplier => supplier.category === "Appliances",
    SHOW_ELECTRONICS: supplier => supplier.category === "Electronics",
    SHOW_TOOLS: supplier => supplier.category === "Tools",
