@@ -5,37 +5,39 @@ import { browserHistory } from 'react-router';
 
 
 const SingleView = React.createClass({
+
    getInitialState(){
-      const current = this.props.suppliers.filter((obj,i)=>{
+
+      return this.props.suppliers.filter((obj,i)=>{
          if(obj.id === this.props.params.singleId){
             return true
          }
-      })
-      return(
-         current[0]
-      )
-
+      })[0];
 
    },
-
    handleEdit(e){
       e.preventDefault()
-      this.props.editSupplier(this.state)
-      // browserHistory.push("/")
+      let { name, address, phone, email, category} = this.refs
+
+      this.props.editSupplier({
+         name: name.value,
+         address: address.value,
+         category: category.value,
+         phone: phone.value,
+         email: email.value,
+         id: this.state.id
+      })
    },
 
-   _handleChange(e){
-      let newState = this.state
-      let currentInput = e.currentTarget.name
-      newState[currentInput] = e.currentTarget.value
-      console.log(newState)
-      this.setState(newState)
+   removeCurrent(){
 
+      this.props.deleteSupplier(this.state)
+      browserHistory.push('/')
    },
-
 
    render(){
-      console.log(this.state)
+
+
 
       return(
          <div className="container">
@@ -44,16 +46,17 @@ const SingleView = React.createClass({
                </div>
                <div className="card-section">
                   <form onSubmit={this.handleEdit}>
-                  <input type="text" value={this.state.name} name="name" onChange={this._handleChange}/>
-                  <input type="text" value={this.state.address} name="address" onChange={this._handleChange}/>
-                  <input type="text" value={this.state.phone} name="phone" onChange={this._handleChange}/>
-                  <input type="text" value={this.state.email} name="email" onChange={this._handleChange}/>
-                  <input type="text" value={this.state.category} name="category" onChange={this._handleChange}/>
+                  <input type="text" defaultValue={this.state.name} ref="name" />
+                  <input type="text" defaultValue={this.state.address} ref="address" />
+                  <input type="text" defaultValue={this.state.phone} ref="phone" />
+                  <input type="text" defaultValue={this.state.email} ref="email" />
+                  <input type="text" defaultValue={this.state.category} ref="category" />
 
 
                   <button>Submit Changes</button>
                   </form>
                </div>
+               <button onClick={this.removeCurrent}>DELETE</button>
             </div>
          </div>
       )

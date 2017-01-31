@@ -12,8 +12,6 @@ function serialize(str, lngth){
    return numStr
 }
 
-
-
 function suppliers(state = [], action){
 
    switch (action.type) {
@@ -30,9 +28,13 @@ function suppliers(state = [], action){
          ...state
       ]
          break;
-      case "REMOVE_SUPPLIER":
+      case "DELETE_SUPPLIER":
          return state.filter((supplier)=>{
-            supplier.id !== action.id
+            if(supplier.id !== action.info.id){
+               return true
+            }else{
+               return false
+            }
          })
          break;
       case "EDIT_SUPPLIER":
