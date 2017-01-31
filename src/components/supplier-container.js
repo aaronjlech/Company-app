@@ -39,7 +39,7 @@ const MainSuppliers = React.createClass({
 
       return(
          <div className="main_container">
-            <Nav displayFilter={this.handleShow}/>
+            <Nav displayFilter={this.handleShow} {...this.props}/>
             <div className="row suppliers_container">
                {filteredSuppliers.map((sup, i)=>{
                   return (

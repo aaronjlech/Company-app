@@ -10,6 +10,17 @@ const Nav = React.createClass({
       this.props.displayFilter(this.refs.filter.value);
 
    },
+   handleSearch(e){
+      let search = this.refs.nameSearch.value.toLowerCase()
+      this.props.suppliers.filter((obj, i)=>{
+            console.log("hayLo")
+            let nameLowered = obj.name.toLowerCase()
+         if(nameLowered.includes(search)){
+            console.log(obj)
+         }
+      })
+   },
+
 
    render(){
 
@@ -30,6 +41,11 @@ const Nav = React.createClass({
                   <option value="SHOW_TOOLS">Tools</option>
                   <option value="SHOW_OUTDOOR">Outdoor Equipment</option>
                </select>
+         </label>
+         <p>OR</p>
+         <label htmlFor="">
+            By Name:
+            <input type="text" onChange={this.handleSearch} ref="nameSearch"/>
          </label>
       </li>
       <li><Link to="/add-new">ADD+</Link></li>
