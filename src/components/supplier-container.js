@@ -1,7 +1,7 @@
 import React from 'react';
 import SupplierCard from './single-supplier';
-import Nav from './nav'
-
+import Nav from './nav';
+import {Link} from 'react-router';
 
 const SUPPLIER_FILTERS = {
    SHOW_ALL: supplier => !supplier.archived,
@@ -26,6 +26,8 @@ const MainSuppliers = React.createClass({
    },
 
 
+
+
    render(){
       const { suppliers } = this.props
       const { filter } = this.state;
@@ -48,7 +50,7 @@ const MainSuppliers = React.createClass({
                         category={sup.category}
                         email={sup.email}
                         phone={sup.phone}
-                        index={i}
+                        id={sup.id}
                      />
                   )
                })}

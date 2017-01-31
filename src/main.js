@@ -1,19 +1,20 @@
 import React from 'react';
 import App from './components/app.js';
 import ReactDOM from 'react-dom';
-import {Route, Router, hashHistory} from 'react-router';
+import {Route, Router, IndexRoute} from 'react-router';
 import { Provider } from 'react-redux';
 import store, {history} from './store';
 import SingleView from './components/single-view';
+import AddNewForm from './components/supplier-form'
+import MainSuppliers from './components/supplier-container'
 
-
-const Root = (
+const Main_Router = (
    <Provider store={store}>
-      <Router history={hashHistory}>
+      <Router history={history}>
          <Route path="/" component={App}>
-            </Route>
-            <Route path='/view/:singleId' component={SingleView}>
-
+            <IndexRoute component={MainSuppliers}></IndexRoute>
+            <Route path='/view/:singleId' component={SingleView}></Route>
+            <Route path='/add-new' component={AddNewForm}></Route>
          </Route>
       </Router>
    </Provider>
@@ -21,4 +22,4 @@ const Root = (
 )
 
 
-ReactDOM.render(Root, document.getElementById('app-container'));
+ReactDOM.render(Main_Router, document.getElementById('app-container'));

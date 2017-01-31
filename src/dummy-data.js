@@ -5,7 +5,7 @@ const suppliers = [
       phone: "888-555-5555",
       email: "newguys@gmail.com",
       category: "Appliances",
-      id: 1
+      id: "1"
 
    },
    {
@@ -14,7 +14,7 @@ const suppliers = [
       phone: "888-767-5555",
       email: "billtools@gmail.com",
       category: "Tools",
-      id: 2
+      id: "2"
    },
    {
       name: "Circuits-R-Us",
@@ -22,7 +22,7 @@ const suppliers = [
       phone: "555-555-5555",
       email: "supply@circuitsrus.com",
       category: "Electronics",
-      id: 3
+      id: "3"
    },
    {
       name: "Circuits-R-Us",
@@ -30,7 +30,7 @@ const suppliers = [
       phone: "555-555-5555",
       email: "supply@circuitsrus.com",
       category: "Electronics",
-      id: 4
+      id: "4"
 
    },
    {
@@ -39,7 +39,7 @@ const suppliers = [
       phone: "888-767-5555",
       email: "billtools@gmail.com",
       category: "Outdoor Equipment",
-      id: 5
+      id: "5"
    },
 
 ];

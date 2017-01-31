@@ -12,9 +12,7 @@ const Main = React.createClass({
 
       return(
          <div className="main-container">
-            <MainSuppliers {...this.props} />
-            <AddNewForm display="display" {...this.props}/>
-
+            {React.cloneElement(this.props.children, this.props)}
          </div>
       )
    }

@@ -1,16 +1,31 @@
-function suppliers(state = [], action){
+// very simple serial generator
+function serialize(str, lngth){
+   let numStr = ''
+   for(var i = str.length -1 ; i >= 0; i--){
+      var randm = Math.floor(str.length*(Math.random()*lngth))
+      if(randm % 2 != 0 || typeof str[i] === "undefined" || str[i] === " "){
+         numStr += randm
+      }else{
+         numStr += str[i]
+      }
+   }
+   return numStr
+}
 
+
+
+function suppliers(state = [], action){
 
    switch (action.type) {
       case "ADD_SUPPLIER":
-         console.log('fiah fiah fiah')
       return[
          {
             name: action.info.name,
             address: action.info.address,
             phone: action.info.phone,
             email: action.info.email,
-            id: state.length
+            category: action.info.category,
+            id: serialize(action.info.name, state.length)
          },
          ...state
       ]

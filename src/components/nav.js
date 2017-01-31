@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link }  from 'react-router';
 
 
 
@@ -32,7 +32,7 @@ const Nav = React.createClass({
                </select>
          </label>
       </li>
-      <li><button type="button" className="button">Search</button></li>
+      <li><Link to="/add-new">ADD+</Link></li>
     </ul>
   </div>
 </div>

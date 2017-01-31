@@ -11,19 +11,19 @@ const SupplierCard = React.createClass({
 
       return(
          <div className="suppliers_single columns medium-4 large-4 small-12">
-            <Link to={`/view/${this.props.index}`}>
-            <div className="card">
-               <div className="card-divider">
-                  <h4>{this.props.name}</h4>
+            <Link to={`/view/${this.props.id}`}>
+               <div className="card">
+                  <div className="card-divider">
+                     <h4>{this.props.name}</h4>
+                  </div>
+                  <div className="card-section">
+                     <p>{this.props.address}</p>
+                     <p>{this.props.phone}</p>
+                     <p>{this.props.email}</p>
+                     <p>{this.props.category}</p>
+                  </div>
                </div>
-               <div className="card-section">
-                  <p>{this.props.address}</p>
-                  <p>{this.props.phone}</p>
-                  <p>{this.props.email}</p>
-                  <p>{this.props.category}</p>
-               </div>
-            </div>
-         </Link>
+            </Link>
          </div>
       );
    }

@@ -1,5 +1,6 @@
 import React from 'react';
-import addSupplier from '../actions/action-creators'
+import addSupplier from '../actions/action-creators';
+import { browserHistory } from 'react-router';
 
 
 
@@ -19,6 +20,7 @@ const AddNewForm = React.createClass({
       console.log(newSupplier)
       this.props.addSupplier(newSupplier)
       this.refs.newForm.reset();
+      browserHistory.push("/")
    },
 
 
