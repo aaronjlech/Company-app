@@ -3,6 +3,9 @@ body{
    background: #bdc3c7;
    font-family: "Lato" sans-serif;
 }
+label{
+   font-weight: bolder;
+}
 #app-container{
 
 
@@ -16,6 +19,7 @@ body{
          font-weight: bolder;
       }
       .suppliers_edit_input{
+         font-weight: normal;
          position: relative;
          text-align: center;
          outline: none;

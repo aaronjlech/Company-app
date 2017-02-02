@@ -44,11 +44,19 @@ const SingleView = React.createClass({
                <h1>Edit Current Supplier</h1>
                <Link to="/" className="button primary_btn home_btn">Home</Link>
 
-               <form onSubmit={this.handleEdit}    >
-                  <input className="suppliers_edit_input" type="text" defaultValue={this.state.name} ref="name" />
-                  <input className="suppliers_edit_input" type="text" defaultValue={this.state.address} ref="address" />
-                  <input className="suppliers_edit_input" type="text" defaultValue={this.state.phone} ref="phone" />
-                  <input className="suppliers_edit_input" type="text" defaultValue={this.state.email} ref="email" />
+               <form onSubmit={this.handleEdit}>
+                  <label htmlFor="name">Name
+                     <input className="suppliers_edit_input" type="text" defaultValue={this.state.name} ref="name" />
+                  </label>
+                  <label htmlFor="address">Address
+                     <input className="suppliers_edit_input" type="text" defaultValue={this.state.address} ref="address" />
+                  </label>
+                  <label htmlFor="phone">Phone
+                     <input className="suppliers_edit_input" type="text" defaultValue={this.state.phone} ref="phone" />
+                  </label>
+                  <label htmlFor="email">Email
+                     <input className="suppliers_edit_input" type="text" defaultValue={this.state.email} ref="email" />
+                  </label>
                   <button className="button primary_btn">Submit Changes</button>
                </form>
                <button className="button primary_btn danger_btn" onClick={this.removeCurrent}>DELETE</button>
