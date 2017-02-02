@@ -6,7 +6,6 @@ import { Link }  from 'react-router';
 const Nav = React.createClass({
 
    handleChange(){
-      console.log('hayllooo', this.refs.filter.value)
       this.props.displayFilter(this.refs.filter.value);
 
    },

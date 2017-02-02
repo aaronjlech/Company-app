@@ -21,7 +21,6 @@ const MainSuppliers = React.createClass({
    },
 
    handleShow(input) {
-      console.log('ggetttinn hitt')
       this.setState({ filter: input })
    },
 
@@ -31,7 +30,6 @@ const MainSuppliers = React.createClass({
    render(){
       const { suppliers } = this.props
       const { filter } = this.state;
-      console.log(this.props)
       const filteredSuppliers = suppliers.filter(
          SUPPLIER_FILTERS[filter]
 

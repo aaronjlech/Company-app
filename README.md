@@ -17,7 +17,9 @@ npm run go
 ```
 localhost:3000
 ```
-#Compile JS for production 
+#Compile JS for production
 ```
 npm run compile
 ```
+#GitHub Repository Link
+[GitHub Repository](https://github.com/aaronjlech/Company-app)

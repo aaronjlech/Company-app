@@ -1,6 +1,6 @@
 import React from 'react';
 import AddNewForm from './supplier-form';
-import MainSuppliers from './supplier-container'
+import MainSuppliers from './supplier-container';
 
 
 

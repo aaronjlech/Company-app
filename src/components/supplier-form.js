@@ -16,7 +16,6 @@ const AddNewForm = React.createClass({
          email: email.value
 
       };
-      console.log(newSupplier)
       this.props.addSupplier(newSupplier)
       this.refs.newForm.reset();
       hashHistory.push("/")
@@ -24,7 +23,6 @@ const AddNewForm = React.createClass({
 
 
    render(){
-      console.log(this.props, 'form proppps')
       return(
          <div className="suppliers_form text-center row">
             <Link to="/" className="button primary_btn home_btn">Home</Link>
