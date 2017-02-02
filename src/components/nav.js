@@ -10,27 +10,17 @@ const Nav = React.createClass({
       this.props.displayFilter(this.refs.filter.value);
 
    },
-   handleSearch(e){
-      let search = this.refs.nameSearch.value.toLowerCase()
-      this.props.suppliers.filter((obj, i)=>{
-            console.log("hayLo")
-            let nameLowered = obj.name.toLowerCase()
-         if(nameLowered.includes(search)){
-            console.log(obj)
-         }
-      })
-   },
 
 
    render(){
 
       return(
-         <div className="top-bar">
+         <div className="top-bar main-nav">
   <div className="top-bar-left">
-      <h1>Supplier Index</h1>
+      <h1 id="title">Poncho's</h1>
   </div>
   <div className="top-bar-right">
-    <ul className="menu">
+    <ul className="menu filter-menu">
       <li>
          <label>
             Show:
@@ -42,13 +32,15 @@ const Nav = React.createClass({
                   <option value="SHOW_OUTDOOR">Outdoor Equipment</option>
                </select>
          </label>
-         <p>OR</p>
-         <label htmlFor="">
-            By Name:
-            <input type="text" onChange={this.handleSearch} ref="nameSearch"/>
-         </label>
+
       </li>
-      <li><Link to="/add-new">ADD+</Link></li>
+      <li>
+         <Link to="/add-new">
+            <div className="button-container">
+               <a className="button primary_btn primary_btn_edit">Edit</a>
+            </div>
+         </Link>
+      </li>
     </ul>
   </div>
 </div>

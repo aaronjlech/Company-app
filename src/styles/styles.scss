@@ -1,15 +1,62 @@
-
-
-
-.display{
-   display: none;
+$main-blue: #3498db;
+body{
+   background: #bdc3c7;
+   font-family: "Lato" sans-serif;
 }
 #app-container{
+   .primary_btn{
+      background: $main-blue;
+      border-radius: 20px;
+      position: relative;
+      border: none;
+      font-size: 1rem;
+      padding: .85em 2em;
+      &:hover{
+         bottom: 1px;
+      }
+   }
+   .main-nav{
+      position: fixed;
+      width: 100%;
+      background: #fff;
+      border-bottom: 1px solid rgba(0,0,0, .7);
+      margin-bottom: 15px;
+      -webkit-box-shadow: 0px 5px 9px 0px rgba(50, 50, 50, 0.75);
+      -moz-box-shadow:    0px 5px 9px 0px rgba(50, 50, 50, 0.75);
+      box-shadow:         0px 5px 9px 0px rgba(50, 50, 50, 0.75);
+      .filter-menu{
+         background: none;
+      }
+   }
 
-
+   #title{
+      color: $main-blue;
+      text-shadow: 2px 2px 4px rgba(94, 94, 94, 1);
+      font-family: "Paytone One", serif;
+   }
    .suppliers_container{
+
+      padding-top: 125px;
+   .suppliers_column{
+      padding: 15px;
+   }
       .suppliers_single{
-         border: 1px solid #333;
+         padding: 0;
+         background: #fff;
+         // border: 1px solid #333;
+         border-radius: 4px;
+         border: none;
+         box-shadow: none;
+
+         .supplier_title{
+
+            border-top-right-radius: 4px;
+            border-top-left-radius: 4px;
+
+            h4{font-family: "Lato", serif;}
+            background: $main-blue;
+            color: #fff;
+         }
       }
    }
 }

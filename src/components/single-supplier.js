@@ -10,10 +10,9 @@ const SupplierCard = React.createClass({
    render(){
 
       return(
-         <div className="suppliers_single columns medium-4 large-4 small-12">
-            <Link to={`/view/${this.props.id}`}>
-               <div className="card">
-                  <div className="card-divider">
+         <div className="columns medium-4 large-4 small-12 suppliers_column text-center">
+               <div className="suppliers_single">
+                  <div className="card-divider supplier_title">
                      <h4>{this.props.name}</h4>
                   </div>
                   <div className="card-section">
@@ -22,8 +21,11 @@ const SupplierCard = React.createClass({
                      <p>{this.props.email}</p>
                      <p>{this.props.category}</p>
                   </div>
+                  <div className="button-container">
+                     <Link className="button primary_btn primary_btn_edit" to={`/view/${this.props.id}`}>Edit</Link>
+
+                  </div>
                </div>
-            </Link>
          </div>
       );
    }
