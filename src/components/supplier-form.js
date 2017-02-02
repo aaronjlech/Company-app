@@ -1,7 +1,6 @@
 import React from 'react';
 import addSupplier from '../actions/action-creators';
-import { browserHistory } from 'react-router';
-
+import { hashHistory, Link } from 'react-router';
 
 
 const AddNewForm = React.createClass({
@@ -20,50 +19,42 @@ const AddNewForm = React.createClass({
       console.log(newSupplier)
       this.props.addSupplier(newSupplier)
       this.refs.newForm.reset();
-      browserHistory.push("/")
+      hashHistory.push("/")
    },
 
 
    render(){
       console.log(this.props, 'form proppps')
       return(
-         <form onSubmit={this._handleSubmit} ref="newForm" >
-           <div className="row">
-            <div className="medium-12 columns">
-               <label>Company Name
-                  <input ref="companyName" type="text" placeholder="name"/>
-               </label>
-               </div>
-            <div className="medium-12 columns">
-               <label>Address
-                 <input ref="address" type="text" placeholder="address"/>
-               </label>
+         <div className="suppliers_form text-center row">
+            <Link to="/" className="button primary_btn home_btn">Home</Link>
+            <div className="small-6 small-centered columns">
+               <h1>Create New Supplier</h1>
+               <form onSubmit={this._handleSubmit} ref="newForm" >
+                  <label>Company Name
+                     <input className="suppliers_edit_input" ref="companyName" type="text" placeholder="name"/>
+                  </label>
+                  <label>Address
+                    <input className="suppliers_edit_input" ref="address" type="text" placeholder="address"/>
+                  </label>
+                  <label>Phone
+                    <input  className="suppliers_edit_input" ref="phone" type="text" placeholder="IE: 555-555-5555"/>
+                  </label>
+                  <label>Email
+                    <input className="suppliers_edit_input" ref="email" type="text" placeholder="Email"/>
+                  </label>
+                  <label>Category
+                     <select className="suppliers_edit_input" ref="category">
+                        <option value="Appliances">Appliances</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Tools">Tools</option>
+                        <option value="Outdoor Equipment">Outdoor Equipment</option>
+                     </select>
+                  </label>
+                  <button className="button primary_btn">Submit</button>
+               </form>
             </div>
-            <div className="medium-12 columns">
-               <label>Phone
-                 <input ref="phone" type="text" placeholder="IE: 555-555-5555"/>
-               </label>
-            </div>
-            <div className="medium-12 columns">
-               <label>Email
-                 <input ref="email" type="text" placeholder="Email"/>
-               </label>
-            </div>
-           </div>
-           <div className="medium-12 columns">
-           <label>
-             Category
-               <select ref="category">
-                  <option value="Appliances">Appliances</option>
-                  <option value="Electronics">Electronics</option>
-                  <option value="Tools">Tools</option>
-                  <option value="Outdoor Equipment">Outdoor Equipment</option>
-               </select>
-            </label>
-            </div>
-            <button>Submit</button>
-
-         </form>
+         </div>
       )
    }
 })

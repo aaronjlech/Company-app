@@ -4,6 +4,33 @@ body{
    font-family: "Lato" sans-serif;
 }
 #app-container{
+
+
+   .suppliers_form{
+      padding: 80px 0;
+      background: #fff;
+      .columns{
+         margin: 0 auto;
+      }
+      h1{
+         font-weight: bolder;
+      }
+      .suppliers_edit_input{
+         position: relative;
+         text-align: center;
+         outline: none;
+         border: 1px solid rgba(70,70,70,.1);
+         box-shadow: none;
+         border-radius: 20px;
+         &:hover{
+            top: 1px;
+         }
+         &:focus{
+               border: 1px solid #999;
+         }
+      }
+
+   }
    .primary_btn{
       background: $main-blue;
       border-radius: 20px;
@@ -13,6 +40,21 @@ body{
       padding: .85em 2em;
       &:hover{
          bottom: 1px;
+      }
+      &:focus{
+         outline: none;
+      }
+   }
+   .danger_btn{
+      background: #e74c3c;
+      font-weight: bolder;
+   }
+   .home_btn{
+      position: fixed;
+      top: 10px;
+      right: 5%;
+      &:hover{
+         bottom:inherit;
       }
    }
    .main-nav{

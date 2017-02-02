@@ -2,7 +2,6 @@ import { bindActionCreators } from 'redux';
 import { connect} from 'react-redux';
 import * as actionCreators from '../actions/action-creators';
 import Main from './main';
-import suppliers from '../dummy-data'
 
 function mapStateToProps(state){
 

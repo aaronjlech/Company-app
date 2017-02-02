@@ -1,5 +1,5 @@
 import React from 'react';
-import { browserHistory } from 'react-router';
+import { hashHistory, Link } from 'react-router';
 
 
 
@@ -22,40 +22,38 @@ const SingleView = React.createClass({
       this.props.editSupplier({
          name: name.value,
          address: address.value,
-         category: category.value,
+         category: this.state.category,
          phone: phone.value,
          email: email.value,
          id: this.state.id
       })
+      hashHistory.push('/')
    },
 
    removeCurrent(){
 
       this.props.deleteSupplier(this.state)
-      browserHistory.push('/')
+      hashHistory.push('/')
    },
 
    render(){
 
       return(
-         <div className="container">
-            <div className="card">
-               <div className="card-divider">
-               </div>
-               <div className="card-section">
-                  <form onSubmit={this.handleEdit}>
-                  <input type="text" defaultValue={this.state.name} ref="name" />
-                  <input type="text" defaultValue={this.state.address} ref="address" />
-                  <input type="text" defaultValue={this.state.phone} ref="phone" />
-                  <input type="text" defaultValue={this.state.email} ref="email" />
-                  <input type="text" defaultValue={this.state.category} ref="category" />
+         <div className="suppliers_form text-center row">
+            <div className="small-6 small-centered columns">
+               <h1>Edit Current Supplier</h1>
+               <Link to="/" className="button primary_btn home_btn">Home</Link>
 
-
-                  <button>Submit Changes</button>
-                  </form>
-               </div>
-               <button onClick={this.removeCurrent}>DELETE</button>
+               <form onSubmit={this.handleEdit}    >
+                  <input className="suppliers_edit_input" type="text" defaultValue={this.state.name} ref="name" />
+                  <input className="suppliers_edit_input" type="text" defaultValue={this.state.address} ref="address" />
+                  <input className="suppliers_edit_input" type="text" defaultValue={this.state.phone} ref="phone" />
+                  <input className="suppliers_edit_input" type="text" defaultValue={this.state.email} ref="email" />
+                  <button className="button primary_btn">Submit Changes</button>
+               </form>
+               <button className="button primary_btn danger_btn" onClick={this.removeCurrent}>DELETE</button>
             </div>
+
          </div>
       )
    }
