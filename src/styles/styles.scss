@@ -16,6 +16,7 @@ body{
       }
    }
    .main-nav{
+      z-index: 10;
       position: fixed;
       width: 100%;
       background: #fff;
@@ -26,13 +27,32 @@ body{
       box-shadow:         0px 5px 9px 0px rgba(50, 50, 50, 0.75);
       .filter-menu{
          background: none;
+         .label_container{
+            padding-right: 0;
+            label{
+               font-size: 20px;
+               margin-bottom: 0;
+            }
+         }
+         select{
+            border-radius: 20px;
+            outline: none;
+            margin: 7px 0 0 0;
+         }
       }
    }
 
    #title{
+      font-size: 4rem;
       color: $main-blue;
       text-shadow: 2px 2px 4px rgba(94, 94, 94, 1);
       font-family: "Paytone One", serif;
+      span{
+         position: relative;
+         bottom: 15px;
+         font-size: 2.4rem;
+      }
+
    }
    .suppliers_container{
 
